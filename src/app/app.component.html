@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="data-boxes-container">
+    @for (item of store.boxes(); track item) {
+    <data-box [num]="item"></data-box>
+    }
+    <div class="result-container">
+      <button
+        mat-stroked-button
+        aria-label="delete button"
+        (click)="handleDelete()"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+      <span>Total value: {{ store.totalScore() }}</span>
+    </div>
+  </div>
+
+  @if (store.areKeysShown()) {
+  <div class="keys-bloc-container">
+    <key-bloc
+      title="front salto's"
+      [keysValues]="[
+        ['.3', 5.2],
+        [',4', 0.3],
+        ['-<', 2.2],
+        ['--0', 3.6],
+        ['44/', 0.9]
+      ]"
+    ></key-bloc>
+
+    <key-bloc
+      title="back salto's"
+      [keysValues]="[
+        ['-0', 2.4],
+        ['-/', 1.5],
+        ['-1/', 3.6],
+        ['3.', 4.2],
+        ['4.', 4.1],
+        ['5.', 1.9],
+        ['6.', 6.4],
+        ['7.', 3.1],
+        ['8.', 2.6],
+        ['24/', 4.8],
+        ['44/', 6.3],
+        ['1-<', 3.4]
+      ]"
+    ></key-bloc>
+
+    <key-bloc
+      title="other"
+      [keysValues]="[
+        ['(', 1.6],
+        ['H', 2.7],
+        ['F', 3.4],
+        ['A', 1.1],
+        ['-/', 5.8]
+      ]"
+    ></key-bloc>
+  </div>
+  }
+</div>

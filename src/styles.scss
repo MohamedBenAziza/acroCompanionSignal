@@ -1,0 +1,19 @@
+* {
+  --primary-color: rgb(246, 246, 246);
+  --secondary-color: rgb(178 175 175);
+  --third-color: rgb(230, 228, 228);
+  --selected-data-color: rgba(144, 238, 144, 0.5);
+  --selected-key-color: red;
+
+  --font-color: black;
+  --title-color: rgb(103 169 228);
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

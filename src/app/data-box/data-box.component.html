@@ -1,0 +1,34 @@
+<div
+  class="container"
+  [ngClass]="{
+    selected: store.selectedBoxIndex() === num()
+  }"
+  (click)="handleClick()"
+  (keydown.enter)="handleClick()"
+  tabindex="0"
+>
+  <div class="top">
+    <div class="number">
+      <span>
+        {{ num() }}
+      </span>
+    </div>
+  </div>
+  <div class="content">
+    @if (store.dataMap().get(num())?.key) {
+    <span class="content__value">{{ store.dataMap().get(num())?.key }}</span>
+    } @else {
+    <span>select element</span>
+    }
+  </div>
+  <div class="bottom">
+    <div></div>
+    <div class="bottom__score">
+      <span>
+        {{ store.dataMap().get(num())?.value }}
+      </span>
+    </div>
+    <div></div>
+    <div></div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="keys-bloc">
+  <span>{{ title() }}</span>
+  <div class="keys-container">
+    @for (item of keysValues(); track $index) {
+    <key-box [key]="item[0]" [value]="item[1]"></key-box>
+    }
+  </div>
+</div>

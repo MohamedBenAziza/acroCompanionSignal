@@ -1,0 +1,21 @@
+.key {
+  height: 80px;
+  width: 80px;
+  border-radius: 5%;
+  font-size: xxx-large;
+  font-weight: bolder;
+  display: grid;
+  place-items: center;
+  border: 0px solid #000000;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  color: var(--font-color);
+
+  &:hover {
+    cursor: pointer;
+  }
+  &.selected {
+    cursor: pointer;
+    background-color: var(--selected-key-color);
+    color: white;
+  }
+}
