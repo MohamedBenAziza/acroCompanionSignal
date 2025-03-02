@@ -3,6 +3,7 @@ import {
   Component,
   inject,
   input,
+  output,
 } from "@angular/core";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { CommonModule } from "@angular/common";
@@ -20,17 +21,7 @@ export class KeyBoxComponent {
   key = input.required<string>();
   value = input.required<number>();
 
+  onClick = output<{ key: string; value: number }>();
+
   readonly store = inject(DataStore);
-
-  handleClick(): void {
-    this.store.setDataMap(this.store.selectedBoxIndex(), {
-      key: this.key(),
-      value: this.value(),
-      keyValue: `${this.key()}${this.value()}`,
-    });
-
-    if (this.store.selectedBoxIndex() < this.store.boxes().length) {
-      this.store.setSelectedBoxIndex(this.store.selectedBoxIndex() + 1);
-    }
-  }
 }

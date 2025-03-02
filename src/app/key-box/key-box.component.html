@@ -6,8 +6,8 @@
       key() + value()
   }"
   [matTooltip]="value() | number"
-  (click)="handleClick()"
-  (keydown.enter)="handleClick()"
+  (click)="onClick.emit({ key: key(), value: value() })"
+  (keydown.enter)="onClick.emit({ key: key(), value: value() })"
   tabindex="0"
 >
   <span>

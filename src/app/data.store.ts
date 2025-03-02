@@ -51,12 +51,16 @@ export const DataStore = signalStore(
     setSelectedBoxIndex(index: number): void {
       patchState(store, () => ({ selectedBoxIndex: index }));
     },
-    setDataMap(
+    updateKeyValue(
       key: number,
       value: { key: string; value: number; keyValue: `${string}${number}` }
     ): void {
       patchState(store, (state) => ({
         dataMap: new Map(state.dataMap.set(key, value)),
+        selectedBoxIndex:
+          state.selectedBoxIndex < state.boxes.length
+            ? state.selectedBoxIndex + 1
+            : state.selectedBoxIndex,
       }));
     },
     loadDataMap(
